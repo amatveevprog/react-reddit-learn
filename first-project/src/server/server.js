@@ -17,5 +17,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log('server started on http://localhost:3000');
+    console.log('server started 2 on http://localhost:3000');
 })
