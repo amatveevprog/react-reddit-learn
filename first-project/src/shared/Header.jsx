@@ -3,7 +3,7 @@ import * as React from "react";
 export function Header(){
     return(
         <header>
-            <h1>This is Reddit for our own hot reload is &</h1>
+            <h1>This is Reddit for our own hot reload is 123456</h1>
         </header>
     )
 }
