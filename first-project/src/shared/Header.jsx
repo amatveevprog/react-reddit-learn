@@ -7,7 +7,7 @@ export function Header(){
     // console.log(styles, styles.example);
     return(
         <header>
-            <h1>Reddit for our own and everything is new absolutely2!!!</h1>
+            <h1>Reddit for our own and everything is new absolutely 123!!!</h1>
         </header>
     )
 }
