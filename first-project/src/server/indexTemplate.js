@@ -1,3 +1,4 @@
+export const indexTemplate = content => `
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -11,13 +12,13 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <script src="/static/client.js" type="application/javascript"></script>
     </head>
     <body>
-        <div id = 'react_root'></div>
+        <div id = 'react_root'>${content}</div>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-        <script src="" async defer></script>
-    <script src="index.js"></script></body>
+            </body>
 </html>
+`;
