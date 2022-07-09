@@ -35,11 +35,29 @@ module.exports = {
       test: /\.[tj]sx?$/,
       exclude: /node_modules/,
       use: ['ts-loader']
-    }]
+    },
+    {
+      test: /\.less$/,
+      use: ['style-loader', {
+        loader: 'css-loader',
+        options: {
+          modules: {
+            mode: 'local',
+            localIdentName: '[name]__[local]--[hash:base64:5]'
+          }
+        }
+      },
+      'less-loader'
+    ],
+    }
+    ]
   },
   devtool: setupDevtool(),
   plugins: IS_DEV ? [
     new CleanWebpackPlugin(),
     new HotModuleReplacementPlugin(),
-  ] : [] // IF PROD, disable all plugins!
+  ] : [], // IF PROD, disable all plugins!
+  watchOptions: {
+    ignored: ['/dist/', '/node_modules/']
+  },
 }

@@ -21,6 +21,21 @@ module.exports = {
       test: /\.[tj]sx?$/,
       exclude: /node_modules/,
       use: ['ts-loader']
+    },
+    {
+      test: /\.less$/,
+      use: [{
+        loader: 'css-loader',
+        options: {
+          modules: {
+            mode: 'local',
+            localIdentName: '[name]__[local]--[hash:base64:5]',
+            exportOnlyLocals: true, // вместо onlyLocals на предыдущих версиях css-loader
+          },
+          // onlyLocals: true
+        }
+      }, 'less-loader'
+    ],
     }]
   },
   externals: [
@@ -28,5 +43,8 @@ module.exports = {
   ],
   optimization: {
     minimize: false,
-  }
+  },
+  watchOptions: {
+    ignored: ['/dist/', '/node_modules/']
+  },
 }
