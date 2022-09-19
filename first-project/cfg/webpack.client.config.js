@@ -47,8 +47,8 @@ module.exports = {
           }
         }
       },
-      'less-loader'
-    ],
+        'less-loader'
+      ],
     }
     ]
   },

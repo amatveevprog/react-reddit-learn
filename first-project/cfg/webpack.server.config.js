@@ -34,8 +34,9 @@ module.exports = {
           },
           // onlyLocals: true
         }
-      }, 'less-loader'
-    ],
+      },
+        'less-loader'
+      ],
     }]
   },
   externals: [
