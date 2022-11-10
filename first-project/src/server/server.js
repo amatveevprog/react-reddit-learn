@@ -1,6 +1,7 @@
 import express from 'express';
 import ReactDom from 'react-dom/server';
-import { Header } from '../shared/Header';
+// import { Header } from '../shared/Header';
+import { App } from '../App';
 import { indexTemplate } from './indexTemplate';
 
 //const express = require('express');
@@ -8,7 +9,7 @@ import { indexTemplate } from './indexTemplate';
     app.use('/static', express.static('./dist/client'));
     app.get('/', (req, res) => {
         res.send(
-            indexTemplate(ReactDom.renderToString(Header()))
+            indexTemplate(ReactDom.renderToString(App()))
         );
     });
     

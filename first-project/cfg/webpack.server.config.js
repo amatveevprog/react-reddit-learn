@@ -2,6 +2,8 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 
 const NODE_ENV = process.env.NODE_ENV;
+const GLOBAL_CSS_REGEXP = /\.global.css$/;
+
 
 module.exports = {
   target: "node",
@@ -13,31 +15,39 @@ module.exports = {
   },
   resolve: {
     extensions: [
-      '.js', '.jsx', '.json'
+      '.js', '.jsx', '.json', '.ts', '.tsx'
     ]
   },
   module: {
-    rules: [{
-      test: /\.[tj]sx?$/,
-      exclude: /node_modules/,
-      use: ['ts-loader']
-    },
-    {
-      test: /\.less$/,
-      use: [{
-        loader: 'css-loader',
-        options: {
-          modules: {
-            mode: 'local',
-            localIdentName: '[name]__[local]--[hash:base64:5]',
-            exportOnlyLocals: true, // вместо onlyLocals на предыдущих версиях css-loader
-          },
-          // onlyLocals: true
-        }
+    rules: [
+      {
+        test: /\.[tj]sx?$/,
+        exclude: /node_modules/,
+        use: ['ts-loader']
       },
-        'less-loader'
-      ],
-    }]
+      {
+        test: /\.css$/,
+        use: [{
+          loader: 'css-loader',
+          options: {
+            modules: {
+              mode: 'local',
+              localIdentName: '[name]__[local]--[hash:base64:5]',
+              //localIdentName: '[name]',
+              exportOnlyLocals: true, // вместо onlyLocals на предыдущих версиях css-loader
+            },
+            // onlyLocals: true
+          }
+        },
+          // 'less-loader'
+        ],
+        exclude: GLOBAL_CSS_REGEXP,
+      },
+      {
+        test: GLOBAL_CSS_REGEXP,
+        use: ['css-loader']
+      }
+    ],
   },
   externals: [
     nodeExternals()
@@ -48,4 +58,4 @@ module.exports = {
   watchOptions: {
     ignored: ['/dist/', '/node_modules/']
   },
-}
+};
