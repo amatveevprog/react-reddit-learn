@@ -17,7 +17,7 @@ export function Card() {
     },
     user: {
       name: 'Алексей Матвеев',
-      imgSrc: 'https://lh3.googleusercontent.com/a/ALm5wu0hNsKkMaHlX43ZWYWXNr5_WEl3mbi-fEvj3MyJyw=s192-c-rg-br100',
+      imgSrc: 'https://ucarecdn.com/631479df-27a8-4047-ae59-63f9167001f2/-/stretch/off/-/resize/1280x/',
       userUrl: 'http://www.google.com'
     },
     published: {
