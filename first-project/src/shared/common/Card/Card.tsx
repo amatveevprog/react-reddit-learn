@@ -4,7 +4,7 @@ import { ICardComponentProps, ICardMenuControlsConfig, ICardPreviewProps, IContr
 import { Content } from './Content';
 import { Preview } from '../Preview';
 import { Menu } from './Menu';
-import { Controls } from '../Controls';
+import { Controls } from './Controls';
 export function Card() {
   const cardPostContent: ICardComponentProps = {
     post: {
@@ -38,11 +38,7 @@ export function Card() {
   };
   const controlsProps:IControlsProps = {
     karmaValue: 234,
-    commentsValue:14,
-    actions:{
-      saveButton:true,
-      shareButton:true
-    }
+    commentsValue:14
   }
   return (
     <li className={styles.card}>

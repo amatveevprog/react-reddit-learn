@@ -71,7 +71,5 @@ export interface IControlsProps{
   // config: ICardControlsConfig;
   karmaValue?: number;
   commentsValue?: number; 
-  actions?: IActionsProps;
-  actionsProps?: IActions; //to be defined later
 }
 
