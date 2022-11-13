@@ -1,5 +1,5 @@
 import React from 'react';
-import { IControlsProps } from '../../../../../types/CardList/Card';
+import { IControlsProps } from '../../../types/CardList/Card';
 import styles from './actions.css';
 import { Save } from './Save';
 import { Share } from './Share';

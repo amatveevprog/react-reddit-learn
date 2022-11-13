@@ -1,5 +1,5 @@
 import React from 'react';
-import { IUserProps } from '../../../../../types/CardList/Card';
+import { IUserProps } from '../../../types/CardList/Card';
 import styles from './user.css';
 
 export function User(props: IUserProps) {

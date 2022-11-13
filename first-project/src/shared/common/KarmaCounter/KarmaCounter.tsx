@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './karmacounter.css';
-import { IKarmaValue } from '../../../../../types/CardList/Card';
+import { IKarmaValue } from '../../../types/CardList/Card';
 export function KarmaCounter(props: IKarmaValue) {
   if(props.karmaValue){
     return (

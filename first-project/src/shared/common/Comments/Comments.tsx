@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICommentsValue } from '../../../../../types/CardList/Card';
+import { ICommentsValue } from '../../../types/CardList/Card';
 import styles from './comments.css';
 
 export function Comments(props: ICommentsValue) {

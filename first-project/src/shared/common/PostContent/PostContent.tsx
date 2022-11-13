@@ -1,5 +1,5 @@
 import React from 'react';
-import { IPostProps } from '../../../../../types/CardList/Card';
+import { IPostProps } from '../../../types/CardList/Card';
 import styles from './postcontent.css';
 
 export function PostContent(props: IPostProps) {

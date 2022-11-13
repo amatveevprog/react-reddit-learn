@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICardPreviewProps } from '../../../../types/CardList/Card';
+import { ICardPreviewProps } from '../../../types/CardList/Card';
 import styles from './preview.css';
 
 export function Preview(props: ICardPreviewProps) {

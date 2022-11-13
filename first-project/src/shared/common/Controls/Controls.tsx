@@ -1,9 +1,9 @@
 import React from 'react';
-import { IControlsProps } from '../../../../types/CardList/Card';
-import { Actions } from './Actions';
-import { Comments } from './Comments';
+import { IControlsProps } from '../../../types/CardList/Card';
+import { Actions } from '../Actions';
+import { Comments } from '../Comments';
+import { KarmaCounter } from '../KarmaCounter';
 import styles from './controls.css';
-import { KarmaCounter } from './KarmaCounter';
 
 export function Controls(props: IControlsProps) {
   const { actions, actionsProps } = props;

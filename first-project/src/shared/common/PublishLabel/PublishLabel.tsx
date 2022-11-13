@@ -1,5 +1,5 @@
 import React from 'react';
-import { IPublishProps } from '../../../../../types/CardList/Card';
+import { IPublishProps } from '../../../types/CardList/Card';
 import styles from './publishlabel.css';
 
 export function PublishLabel(props: IPublishProps) {

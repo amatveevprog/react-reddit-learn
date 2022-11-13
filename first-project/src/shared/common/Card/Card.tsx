@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './card.css';
 import { ICardComponentProps, ICardMenuControlsConfig, ICardPreviewProps, IControlsProps } from '../../../types/CardList/Card';
 import { Content } from './Content';
-import { Preview } from './Preview';
+import { Preview } from '../Preview';
 import { Menu } from './Menu';
-import { Controls } from './Controls';
+import { Controls } from '../Controls';
 export function Card() {
   const cardPostContent: ICardComponentProps = {
     post: {

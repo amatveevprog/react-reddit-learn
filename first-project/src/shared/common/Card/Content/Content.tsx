@@ -1,9 +1,9 @@
 import React from 'react';
 import { ICardComponentProps, IPostProps, IPublishProps, IUserProps } from '../../../../types/CardList/Card';
 import styles from './content.css';
-import { PostContent } from './PostContent';
-import { PublishLabel } from './PublishLabel';
-import { User } from './User';
+import { PostContent } from '../../PostContent';
+import { PublishLabel } from '../../PublishLabel';
+import { User } from '../../User';
 
 export function Content(props: ICardComponentProps) {
   const userProps:IUserProps = {...props.user};
