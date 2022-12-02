@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './card.css';
-import { ICardComponentProps, ICardMenuControlsConfig, ICardPreviewProps, IControlsProps } from '../../../types/CardList/Card';
+import { ICardComponentProps, ICardPreviewProps, IControlsProps } from '../../../types/CardList/Card';
 import { Content } from './Content';
 import { Preview } from '../Preview';
 import { Menu } from './Menu';
 import { Controls } from './Controls';
+
 export function Card() {
   const cardPostContent: ICardComponentProps = {
     post: {
@@ -27,27 +28,34 @@ export function Card() {
   const cardPreviewContent: ICardPreviewProps = {
     src: 'https://cdn.dribbble.com/userupload/2748402/file/original-c45c9cbd53d6d24e58a4ef82f14c1fcd.jpg?compress=1&resize=1504x1128'
   }
-  const cardMenuProps: ICardMenuControlsConfig = {
-    controls: [
-      "MENU_ITEM_COMMENTS",
-      "MENU_ITEM_SHARE",
-      "MENU_ITEM_HIDE",
-      "MENU_ITEM_SAVE",
-      "MENU_ITEM_COMPLAIN"
-    ]
-  };
-  const controlsProps:IControlsProps = {
+  const MENU_LIST = [
+    { text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const,  onClick:(id:string)=>{
+      console.log('Комментарии', id);
+    }},
+    { text: "Поделиться", className: "menu-item-share", icon: "share", As: 'li' as const,  onClick:(id:string)=>{
+      console.log('Поделиться', id);
+    }},
+    { text: "Скрыть", className: "menu-item-hide", icon: 'hide', As: 'li' as const,  onClick:(id:string)=>{
+      console.log('Скрыть', id);
+    }},
+    { text: "Сохранить", className: "menu-item-save", icon: 'save', As: 'button' as const,  onClick:(id:string)=>{
+      console.log('Сохранить', id);
+    }},
+    { text: "Пожаловаться", className: "menu-item-complain", icon: 'complain', As: 'li' as const,  onClick:(id:string)=>{
+      console.log('Пожаловаться', id);
+    }},
+  ];
+  const controlsProps: IControlsProps = {
     karmaValue: 234,
-    commentsValue:14
+    commentsValue: 14
   }
   return (
     <li className={styles.card}>
       <Content {...cardPostContent} />
       <Preview {...cardPreviewContent} />
-      <Menu {...cardMenuProps} />
+      <Menu items={MENU_LIST} />
 
-      <Controls {...controlsProps}/>
-      
+      <Controls {...controlsProps} />
     </li >
   );
 }
