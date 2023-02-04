@@ -53,7 +53,7 @@ export function Card() {
     <li className={styles.card}>
       <Content {...cardPostContent} />
       <Preview {...cardPreviewContent} />
-      <Menu items={MENU_LIST} />
+      <Menu items={MENU_LIST} styleOfMenuContainer={styles.menuContainer} />
 
       <Controls {...controlsProps} />
     </li >

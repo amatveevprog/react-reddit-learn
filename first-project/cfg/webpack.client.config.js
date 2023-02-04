@@ -59,6 +59,16 @@ module.exports = {
         test: GLOBAL_CSS_REGEXP,
         use: ['style-loader', 'css-loader']
       },
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: [{
+          loader:'file-loader',
+          options:{
+            name:'[hash]-[name].[ext]',
+            outputPath:'images'
+          }
+        },]
+      },
     ]
   },
   devtool: setupDevtool(),

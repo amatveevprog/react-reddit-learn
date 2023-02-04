@@ -23,40 +23,43 @@ export interface IMenuItem {
 };
 
 export interface IMenuListProps {
-  list: IMenuItem[]
+  list: IMenuItem[];
+  containerClass?: string;
 }
 /* function fillArrayWithProp<>(element: IMenuItem){
   return ()=>{}
 } */
 
-function fillWithIds(list: IMenuItem[]):IItem[] {
+function fillWithIds(list: IMenuItem[]): IItem[] {
   return list.map((elt) => (elt.id ? elt : generateId(elt))) as IItem[];
 }
-function fillWithClassNames(list: IItem[]):IItem[]{
-  return list.map((elt) => ({...elt, className:styles2[elt.className as string]}))
+function fillWithClassNames(list: IItem[]) {
+  return list.map((elt) => ({ ...elt, className: styles2[elt.className as string] }))
 }
-function addCloseELement(list: IItem[]):IItem[] {
+function addCloseELement(list: IItem[]): IItem[] {
   return list.concat(generateId({
     text: "Закрыть",
-    className: styles2["menu-item-close"],
+    className: styles2.menuItemClose,
     As: 'button' as const,
     onClick: () => {
-        console.log('close event handler');
+      console.log('close event handler');
     }
-  })) as IItem[];
+  }));
 }
 
-function fillWithChildren(list: IItem[]):IItem[] {
+function fillWithChildren(list: IItem[]) {
   return list.map((element, index, array) => ({
     ...element,
     children: React.createElement(MenuItem, { ...element, index, menuLength: array.length })
-  })) as IItem[];
+  }));
 }
 
 const menuPipe = pipe(fillWithIds, fillWithClassNames, fillWithChildren, addCloseELement);
 
 export function Menu(props: any) {
+  console.log('props: ', props.styleOfMenuContainer);
   return (
+
     <div className={styles.menu} >
       <Dropdown
         button={<button className={styles.menuButton}>
@@ -67,9 +70,11 @@ export function Menu(props: any) {
           </svg>
         </button>}
       >
-        <ul className={styles['menu-ul']}>
-          <GenericList list={menuPipe(props.items)} />
-        </ul>
+        <div className={props?.styleOfMenuContainer}>
+          <ul className={styles.menuUl}>
+            <GenericList list={menuPipe(props.items)} />
+          </ul>
+        </div>
       </Dropdown>
     </div>
   );

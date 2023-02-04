@@ -5,7 +5,7 @@ import { isPropertyInObjectSet } from '../../../../../utils/js/isPropertyInObjec
 
 const iconsSet = new Set(Object.keys(icons));
 function getIcon<E extends IIcon>(iconName: string) {
-  return (iconsSet.has(iconName) && <img className={styles["menu-item-img"]} src={icons[iconName as E]} />);
+  return (iconsSet.has(iconName) && <img className={styles.menuItemImg} src={icons[iconName as E]} />);
 }
 
 interface IMenuItemProps {
@@ -24,16 +24,16 @@ const isLastElement = (index: number, length: number) => (index === length - 1);
 export function MenuItem(props: IMenuItemProps) {
   const { icon = "", text, children, index, menuLength } = props;
   return (
-    <div className={styles['menu-item-container']}>
-      <div className={styles['menu-item-content-container']}>
-        <div className={styles['menu-item-content']}>
+    <div className={styles.menuItemContainer}>
+      <div className={styles.menuItemContentContainer}>
+        <div className={styles.menuItemContent}>
           {getIcon(icon)}
-          {children ? children : <div className={styles["menu-item-text"]}>{text}</div>}
+          {children ? children : <div className={styles.menuItemText}>{text}</div>}
         </div>
       </div>
       {isIndexSet(props) && isLengthSet(props) && !isLastElement(index as number, menuLength as number) &&
-        <div className={styles['menu-item-horizontal-container']}>
-          <div className={styles['menu-item-horizontal-line']} />
+        <div className={styles.menuItemHorizontalContainer}>
+          <div className={styles.menuItemHorizontalLine} />
         </div>}
     </div>
   );

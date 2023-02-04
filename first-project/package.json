@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:dev": "env NODE_ENV=development webpack --config webpack.config.js",
-    "build:prod": "env NODE_ENV=production webpack --config webpack.config.js",
-    "dev:wds": "env NODE_ENV=development webpack-dev-server",
-    "dev": "env NODE_ENV=development node ./bin/dev.js"
+    "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
+    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "dev:wds": "cross-env NODE_ENV=development webpack-dev-server",
+    "dev": "cross-env NODE_ENV=development node ./bin/dev.js"
   },
   "repository": {
     "type": "git",
@@ -21,9 +21,11 @@
   },
   "homepage": "https://gitlab.com/amatveevprog/skillbox-first-project#readme",
   "dependencies": {
+    "@types/ramda": "^0.28.20",
     "cors": "^2.8.5",
     "express": "^4.18.1",
     "nodemon": "^2.0.19",
+    "ramda": "^0.28.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "unique-names-generator": "^4.7.1"
@@ -34,7 +36,9 @@
     "@types/react": "^17.0.50",
     "@types/react-dom": "^18.0.6",
     "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^28.1.2",
     "less": "^4.1.3",
