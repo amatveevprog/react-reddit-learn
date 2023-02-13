@@ -26,6 +26,7 @@ export interface IMenuItem {
 export interface IMenuListProps {
   list: IMenuItem[];
   containerClass?: string;
+  cardId?: string;
 }
 /* function fillArrayWithProp<>(element: IMenuItem){
   return ()=>{}
@@ -35,7 +36,7 @@ function fillWithIds(list: IMenuItem[]): IItem[] {
   return list.map((elt) => (elt.id ? elt : generateId(elt))) as IItem[];
 }
 function fillWithClassNames(list: IItem[]) {
-  return list.map((elt) => ({ ...elt, className: styles2[elt.className as string] }))
+  return list.map((elt) => ({ ...elt, className: styles2[elt.className as string]}))
 }
 function addCloseELement(list: IItem[]): IItem[] {
   return list.concat(generateId({
@@ -53,6 +54,15 @@ function fillWithChildren(list: IItem[]) {
     ...element,
     children: React.createElement(MenuItem, { ...element, index, menuLength: array.length })
   }));
+}
+function fillObjWithProperty<K extends object>(obj:K){
+  return (name:string,value:any)=>{
+    obj[name as keyof K]=value;
+  }
+}
+
+function addIdToElements(list: IItem[],postId: string){
+  return list.map(elt=>({...elt,postId}));
 }
 
 const menuPipe = pipe(fillWithIds, fillWithClassNames, fillWithChildren, addCloseELement);

@@ -13,6 +13,10 @@ import { merge } from './utils/js/merge';
 import { Dropdown } from './shared/common/Dropdown';
 import { MenuItem } from './shared/common/Card/Menu/MenuItem';
 import { Menu } from './shared/common/Card/Menu';
+import { EColor, Text } from './shared/common/Text';
+import { Break } from './shared/common/Break';
+import { Menu2 } from './shared/common/Card/Menu/Menu2';
+import { Icon, EIcons } from './shared/common/Icon';
 // without HMR
 /* export function App() {
     return (
@@ -20,52 +24,66 @@ import { Menu } from './shared/common/Card/Menu';
     )
 } */
 const LIST = [
-    { As: 'li' as const, text: 'bbb' },
-    { As: 'li' as const, text: 'bbb' },
-    { As: 'li' as const, text: 'aaa' },
-    { As: 'li' as const, text: 'ccc' },
-    { As: 'li' as const, text: 'aaa' },
+  { As: 'li' as const, text: 'bbb' },
+  { As: 'li' as const, text: 'bbb' },
+  { As: 'li' as const, text: 'aaa' },
+  { As: 'li' as const, text: 'ccc' },
+  { As: 'li' as const, text: 'aaa' },
 ].map(generateId);
 // with HMR:
 function AppComponent() {
-    /* const [isVisible, setVisible] = React.useState(false);
-    const [title, setTitle] = React.useState(''); */
-    const [list, setList] = React.useState(LIST);
-    const [isDropdownOpened, setIsDropdownOpen] = React.useState(false);
-    const handleItemClick = (id: string) => {
-        setList(list.filter(item => item.id != id));
-    }
-    const handleAdd = () => {
-        setList(list.concat(generateId({ text: generateRandomString(), As: 'li' as const })));
-    };
-    const MENU_LIST = [
-        { text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const,  onClick:(id:string)=>{
-            console.log('Комментарии', id);
-          }},{ text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const,  onClick:(id:string)=>{
-            console.log('Комментарии', id);
-          }},{ text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const,  onClick:(id:string)=>{
-            console.log('Комментарии', id);
-          }},{ text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const,  onClick:(id:string)=>{
-            console.log('Комментарии', id);
-          }},{ text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const,  onClick:(id:string)=>{
-            console.log('Комментарии', id);
-          }},{ text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const,  onClick:(id:string)=>{
-            console.log('Комментарии', id);
-          }},{ text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const,  onClick:(id:string)=>{
-            console.log('Комментарии', id);
-          }},
-    ]
-    return (
-        <Layout>
-            <Header />
-            <Content>
-                <CardsList />
-                {/* <button onClick={handleAdd}>Add element</button> */}
-                {/* <ul>
+  /* const [isVisible, setVisible] = React.useState(false);
+  const [title, setTitle] = React.useState(''); */
+  const [list, setList] = React.useState(LIST);
+  const [isDropdownOpened, setIsDropdownOpen] = React.useState(false);
+  const handleItemClick = (id: string) => {
+    setList(list.filter(item => item.id != id));
+  }
+  const handleAdd = () => {
+    setList(list.concat(generateId({ text: generateRandomString(), As: 'li' as const })));
+  };
+  const MENU_LIST = [
+    {
+      text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const, onClick: (id: string) => {
+        console.log('Комментарии', id);
+      }
+    }, {
+      text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const, onClick: (id: string) => {
+        console.log('Комментарии', id);
+      }
+    }, {
+      text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const, onClick: (id: string) => {
+        console.log('Комментарии', id);
+      }
+    }, {
+      text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const, onClick: (id: string) => {
+        console.log('Комментарии', id);
+      }
+    }, {
+      text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const, onClick: (id: string) => {
+        console.log('Комментарии', id);
+      }
+    }, {
+      text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const, onClick: (id: string) => {
+        console.log('Комментарии', id);
+      }
+    }, {
+      text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const, onClick: (id: string) => {
+        console.log('Комментарии', id);
+      }
+    },
+  ]
+  return (
+    <Layout>
+      <Header />
+      <Content>
+        <CardsList />
+        {/* <button onClick={handleAdd}>Add element</button> */}
+        {/* <ul>
                     <GenericList list={list.map(merge({ onClick: handleItemClick }))} />
                 </ul> */}
 
-                    {/*                 <div style={{ padding: 20 }}>
+        {/*                 <div style={{ padding: 20 }}>
                     <br />
                     <Dropdown 
                     isOpen={isDropdownOpened}
@@ -81,10 +99,25 @@ function AppComponent() {
                     </Dropdown>
                 </div>
                 <MenuItem text={"Сохранить"} icon={"save"}/> */}
-                 <Menu items={MENU_LIST} />
-            </Content>
-        </Layout>
-    );
+        <br />
+        <Icon name={EIcons.block} />
+        <Icon name={EIcons.block} size={16} />
+        <Icon name={EIcons.block} size={24} />
+        <Icon name={EIcons.block} size={20} />
+        <Icon name={EIcons.comment} size={20} />
+        <Icon name={EIcons.comment} />
+        <Icon name={EIcons.comment} size={64} />
+        <Icon name={EIcons.share} size={64} />
+        <Icon name={EIcons.share} />
+        <Icon name={EIcons.share} size={128} />
+        <Icon name={EIcons.warning} size={128} />
+        <Icon name={EIcons.warning} size={64} />
+        <Icon name={EIcons.warning} size={32} />
+        <Icon name={EIcons.warning} />
+
+      </Content>
+    </Layout>
+  );
 };
 
 export const App = hot(() => <AppComponent />);

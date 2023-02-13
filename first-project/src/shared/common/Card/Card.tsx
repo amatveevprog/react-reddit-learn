@@ -4,6 +4,7 @@ import { ICardComponentProps, ICardPreviewProps, IControlsProps } from '../../..
 import { Content } from './Content';
 import { Preview } from '../Preview';
 import { Menu } from './Menu';
+import { Menu2 } from './Menu/Menu2';
 import { Controls } from './Controls';
 
 export function Card() {
@@ -30,7 +31,7 @@ export function Card() {
   }
   const MENU_LIST = [
     { text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const,  onClick:(id:string)=>{
-      console.log('Комментарии', id);
+      console.log('Комментарии', cardId);
     }},
     { text: "Поделиться", className: "menu-item-share", icon: "share", As: 'li' as const,  onClick:(id:string)=>{
       console.log('Поделиться', id);
@@ -49,12 +50,13 @@ export function Card() {
     karmaValue: 234,
     commentsValue: 14
   }
+  const cardId = '12345';
   return (
     <li className={styles.card}>
       <Content {...cardPostContent} />
       <Preview {...cardPreviewContent} />
-      <Menu items={MENU_LIST} styleOfMenuContainer={styles.menuContainer} />
-
+      <Menu items={MENU_LIST} styleOfMenuContainer={styles.menuContainer} cardId/>
+      
       <Controls {...controlsProps} />
     </li >
   );
