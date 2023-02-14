@@ -87,4 +87,10 @@
     .menuIconContent {
         padding: 0 5px 0 20px;
     }
+    .divider {
+        background-color: var(--greyEC);
+        margin: 0 20px;
+        height: 1px;
+        width:120px;
+    }
 }

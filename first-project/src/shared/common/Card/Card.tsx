@@ -4,7 +4,6 @@ import { ICardComponentProps, ICardPreviewProps, IControlsProps } from '../../..
 import { Content } from './Content';
 import { Preview } from '../Preview';
 import { Menu } from './Menu';
-import { Menu2 } from './Menu/Menu2';
 import { Controls } from './Controls';
 
 export function Card() {
@@ -30,21 +29,45 @@ export function Card() {
     src: 'https://cdn.dribbble.com/userupload/2748402/file/original-c45c9cbd53d6d24e58a4ef82f14c1fcd.jpg?compress=1&resize=1504x1128'
   }
   const MENU_LIST = [
-    { text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const,  onClick:(id:string)=>{
-      console.log('Комментарии', cardId);
-    }},
-    { text: "Поделиться", className: "menu-item-share", icon: "share", As: 'li' as const,  onClick:(id:string)=>{
-      console.log('Поделиться', id);
-    }},
-    { text: "Скрыть", className: "menu-item-hide", icon: 'hide', As: 'li' as const,  onClick:(id:string)=>{
-      console.log('Скрыть', id);
-    }},
-    { text: "Сохранить", className: "menu-item-save", icon: 'save', As: 'button' as const,  onClick:(id:string)=>{
-      console.log('Сохранить', id);
-    }},
-    { text: "Пожаловаться", className: "menu-item-complain", icon: 'complain', As: 'li' as const,  onClick:(id:string)=>{
-      console.log('Пожаловаться', id);
-    }},
+    {
+      text: "Комментарии", 
+      className: "menu-item-comment", 
+      icon: "comment", 
+      As: 'li' as const, 
+      onClick: (id: string) => {
+        console.log('Комментарии', cardId);
+      }
+    },
+    {
+      text: "Поделиться", 
+      className: "menu-item-share", 
+      icon: "share", 
+      As: 'li' as const, 
+      onClick: (id: string) => {
+        console.log('Поделиться', id);
+      }
+    },
+    {
+      text: "Скрыть", 
+      className: "menu-item-hide",
+      icon: 'block', 
+      As: 'li' as const, 
+      onClick: (id: string) => {
+        console.log('Скрыть', id);
+      }
+    },
+    {
+      text: "Сохранить", 
+      className: "menu-item-save", 
+      icon: 'save', As: 'button' as const, onClick: (id: string) => {
+        console.log('Сохранить', id);
+      }
+    },
+    {
+      text: "Пожаловаться", className: "menu-item-complain", icon: 'warning', As: 'li' as const, onClick: (id: string) => {
+        console.log('Пожаловаться', id);
+      }
+    },
   ];
   const controlsProps: IControlsProps = {
     karmaValue: 234,

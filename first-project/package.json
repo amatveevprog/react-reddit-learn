@@ -8,7 +8,7 @@
     "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
     "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "dev:wds": "cross-env NODE_ENV=development webpack-dev-server",
-    "dev": "cross-env NODE_ENV=development node ./bin/dev.js"
+    "dev": "cross-env NODE_ENV=development CLIENT_ID=skocT9HvBKlB76Hw4FY7aw node ./bin/dev.js"
   },
   "repository": {
     "type": "git",

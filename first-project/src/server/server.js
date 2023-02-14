@@ -13,6 +13,14 @@ import { indexTemplate } from './indexTemplate';
         );
     });
     
+    app.get('/auth', (req, res) => {
+        console.log('request query.code: ', req.query.code);
+        // req.query.code
+        res.send(
+            indexTemplate(ReactDom.renderToString(App()))
+        );
+    });
+    
     app.listen(3000, () => {
         console.log('server started on http://localhost:3000');
     })

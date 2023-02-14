@@ -15,7 +15,6 @@ import { MenuItem } from './shared/common/Card/Menu/MenuItem';
 import { Menu } from './shared/common/Card/Menu';
 import { EColor, Text } from './shared/common/Text';
 import { Break } from './shared/common/Break';
-import { Menu2 } from './shared/common/Card/Menu/Menu2';
 import { Icon, EIcons } from './shared/common/Icon';
 // without HMR
 /* export function App() {
@@ -100,7 +99,7 @@ function AppComponent() {
                 </div>
                 <MenuItem text={"Сохранить"} icon={"save"}/> */}
         <br />
-        <Icon name={EIcons.block} />
+        <Icon name={EIcons.block} className={"block-block"}/>
         <Icon name={EIcons.block} size={16} />
         <Icon name={EIcons.block} size={24} />
         <Icon name={EIcons.block} size={20} />

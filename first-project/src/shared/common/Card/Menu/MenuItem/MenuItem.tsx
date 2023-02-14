@@ -3,27 +3,11 @@ import styles from './menuitem.css';
 import { icons, IIcon } from './icons/';
 import { isPropertyInObjectSet } from '../../../../../utils/js/isPropertyInObjectSet';
 import { EIcons, Icon } from '../../../Icon';
+import { EColor, Text } from '../../../Text';
 
 const iconsSet = new Set(Object.keys(icons));
 function getIcon<E extends IIcon>(iconName: string) {
   return (iconsSet.has(iconName) && <img className={styles.menuItemImg} src={icons[iconName as E]} />);
-}
-function getIcon2(iconName: string):React.ReactNode{
-  if(iconsSet.has(iconName)){
-    switch(iconName){
-      case 'comment': 
-      return (<Icon name={EIcons.comment}/>);
-      case 'complain': 
-      return (<Icon name={EIcons.warning}/>);
-      case 'hide': 
-      return (<Icon name={EIcons.block}/>);
-      case 'save': 
-      return (<Icon name={EIcons.save}/>);
-      case 'share': 
-      return (<Icon name={EIcons.share}/>);
-      default: return null;
-    }
-  }
 }
 
 interface IMenuItemProps {
@@ -46,9 +30,11 @@ export function MenuItem(props: IMenuItemProps) {
       <div className={styles.menuItemContentContainer}>
         <div className={styles.menuItemContent}>
           <div className={styles.menuIconContent}>
-          {getIcon2(icon)}
+          <Icon name={icon}/>
           </div>
-          {children ? children : <div className={styles.menuItemText}>{text}</div>}
+          {children ? children : <div className={styles.menuItemText}>
+              <Text mobileSize={12} size={14} color={EColor.grey99}>{text}</Text>
+            </div>}
         </div>
       </div>
       {isIndexSet(props) && isLengthSet(props) && !isLastElement(index as number, menuLength as number) &&
