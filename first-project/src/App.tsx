@@ -41,37 +41,6 @@ function AppComponent() {
   const handleAdd = () => {
     setList(list.concat(generateId({ text: generateRandomString(), As: 'li' as const })));
   };
-  const MENU_LIST = [
-    {
-      text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const, onClick: (id: string) => {
-        console.log('Комментарии', id);
-      }
-    }, {
-      text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const, onClick: (id: string) => {
-        console.log('Комментарии', id);
-      }
-    }, {
-      text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const, onClick: (id: string) => {
-        console.log('Комментарии', id);
-      }
-    }, {
-      text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const, onClick: (id: string) => {
-        console.log('Комментарии', id);
-      }
-    }, {
-      text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const, onClick: (id: string) => {
-        console.log('Комментарии', id);
-      }
-    }, {
-      text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const, onClick: (id: string) => {
-        console.log('Комментарии', id);
-      }
-    }, {
-      text: "Комментарии", className: "menu-item-comment", icon: "comment", As: 'li' as const, onClick: (id: string) => {
-        console.log('Комментарии', id);
-      }
-    },
-  ]
   return (
     <Layout>
       <Header />
@@ -99,20 +68,7 @@ function AppComponent() {
                 </div>
                 <MenuItem text={"Сохранить"} icon={"save"}/> */}
         <br />
-        <Icon name={EIcons.block} className={"block-block"}/>
-        <Icon name={EIcons.block} size={16} />
-        <Icon name={EIcons.block} size={24} />
-        <Icon name={EIcons.block} size={20} />
-        <Icon name={EIcons.comment} size={20} />
-        <Icon name={EIcons.comment} />
-        <Icon name={EIcons.comment} size={64} />
-        <Icon name={EIcons.share} size={64} />
-        <Icon name={EIcons.share} />
-        <Icon name={EIcons.share} size={128} />
-        <Icon name={EIcons.warning} size={128} />
-        <Icon name={EIcons.warning} size={64} />
-        <Icon name={EIcons.warning} size={32} />
-        <Icon name={EIcons.warning} />
+        
 
       </Content>
     </Layout>
